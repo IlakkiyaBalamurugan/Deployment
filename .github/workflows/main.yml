@@ -12,7 +12,6 @@ on:
           - dev
           - staging
           - production
-      inputs:
       ICI_Version:
        required: true
         
