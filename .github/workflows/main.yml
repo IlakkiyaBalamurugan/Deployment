@@ -22,15 +22,15 @@ jobs:
         id: vars
         run: |
           echo "ENVIRONMENT=${{ github.event.inputs.environment }}"
-          case $ENVIRONMENT in
+          case "$ENVIRONMENT" in
             "dev")
-              echo "dev"
+              echo "hellow dev"
               ;;
             "staging")
-              echo "staging"
+              echo " hellow staging"
               ;;
             "production")
-              echo "PROD"
+              echo " hellow PROD"
               ;;
             *)
               echo "Invalid environment"
