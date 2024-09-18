@@ -12,15 +12,12 @@ on:
           - dev
           - staging
           - production
-      ICI_Version:
-       required: true
-        
+ 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-     
       - name: Set environment-specific variables
         id: vars
         run: |
@@ -47,21 +44,3 @@ jobs:
               ;;
           esac
 
-      - name: Fetch artifact from JFrog Artifactory
-        env:
-          JFROG_URL: ${{ env.JFROG_URL }}
-          JFROG_API_KEY: ${{ secrets.JFROG_API_KEY }}
-        run: |
-          curl -u $JFROG_API_KEY: \
-               -O "$JFROG_URL/path/to/artifact.tar.gz"
-
-      - name: Extract artifact
-        run: |
-          tar -xzf artifact.tar.gz
-
-      - name: Deploy to Azure App Service
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.AZURE_APP_NAME }}
-          publish-profile: ${{ env.AZURE_PUBLISH_PROFILE }}
-          package: './path/to/extracted/artifact'
