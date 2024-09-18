@@ -23,13 +23,13 @@ jobs:
         run: |
           echo "ENVIRONMENT=${{ github.event.inputs.environment }}"
           case $ENVIRONMENT in
-            dev)
+            "dev")
               echo "dev"
               ;;
-            staging)
+            "staging")
               echo "staging"
               ;;
-            production)
+            "production")
               echo "PROD"
               ;;
             *)
