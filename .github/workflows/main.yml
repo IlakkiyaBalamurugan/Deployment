@@ -25,7 +25,6 @@ jobs:
           case $ENVIRONMENT in
             dev)
               echo "dev"
-              
               ;;
             staging)
               echo "staging"
@@ -34,7 +33,7 @@ jobs:
               echo "PROD"
               ;;
             *)
-              echo "Invalid environment" >&2
+              echo "Invalid environment"
               exit 1
               ;;
           esac
