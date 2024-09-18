@@ -24,19 +24,14 @@ jobs:
           echo "ENVIRONMENT=${{ github.event.inputs.environment }}" >> $GITHUB_ENV
           case $ENVIRONMENT in
             dev)
-              echo "JFROG_URL=https://jfrog.dev.example.com/artifactory" >> $GITHUB_ENV
-              echo "AZURE_APP_NAME=my-app-dev" >> $GITHUB_ENV
-              echo "AZURE_PUBLISH_PROFILE=${{ secrets.AZURE_PUBLISH_PROFILE_DEV }}" >> $GITHUB_ENV
+              echo "dev"
+              
               ;;
             staging)
-              echo "JFROG_URL=https://jfrog.staging.example.com/artifactory" >> $GITHUB_ENV
-              echo "AZURE_APP_NAME=my-app-staging" >> $GITHUB_ENV
-              echo "AZURE_PUBLISH_PROFILE=${{ secrets.AZURE_PUBLISH_PROFILE_STAGING }}" >> $GITHUB_ENV
+              echo "staging"
               ;;
             production)
-              echo "JFROG_URL=https://jfrog.prod.example.com/artifactory" >> $GITHUB_ENV
-              echo "AZURE_APP_NAME=my-app-prod" >> $GITHUB_ENV
-              echo "AZURE_PUBLISH_PROFILE=${{ secrets.AZURE_PUBLISH_PROFILE_PROD }}" >> $GITHUB_ENV
+              echo "PROD"
               ;;
             *)
               echo "Invalid environment" >&2
