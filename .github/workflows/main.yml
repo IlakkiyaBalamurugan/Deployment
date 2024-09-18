@@ -21,7 +21,7 @@ jobs:
       - name: Set environment-specific variables
         id: vars
         run: |
-          echo "ENVIRONMENT=${{ github.event.inputs.environment }}" >> $GITHUB_ENV
+          echo "ENVIRONMENT=${{ github.event.inputs.environment }}"
           case $ENVIRONMENT in
             dev)
               echo "dev"
